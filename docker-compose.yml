@@ -1,0 +1,22 @@
+version: '2'
+services:
+  app:
+    build: .
+    volumes:
+      - .:/advice2
+    depends_on:
+      - db
+  db:
+    build: containers/postgres
+    environment:
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - ./db/pgdata:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+  web:
+    build: containers/nginx
+    ports:
+      - "80:80"
+    volumes_from:
+      - app
