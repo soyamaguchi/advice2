@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  prefecture: MyString
+  city: MyString
+  ward: MyString
+  url: MyString
+
+two:
+  prefecture: MyString
+  city: MyString
+  ward: MyString
+  url: MyString
