@@ -4,16 +4,10 @@ one:
   city: one
   url: MyString
   category: 1
-  update_time: 2019-06-15
   main_title: MyString
-  sub_title: MyString
-  content: MyText
 
 two:
   city: two
   url: MyString
   category: 1
-  update_time: 2019-06-15
   main_title: MyString
-  sub_title: MyString
-  content: MyText

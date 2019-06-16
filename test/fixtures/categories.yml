@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  city: one
+  category_id: 1
+  category_name: MyString
+
+two:
+  city: two
+  category_id: 1
+  category_name: MyString

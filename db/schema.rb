@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_28_134738) do
+ActiveRecord::Schema.define(version: 2019_06_16_145343) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.bigint "city_id", null: false
+    t.integer "category_id", null: false
+    t.string "category_name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["city_id"], name: "index_categories_on_city_id"
+  end
 
   create_table "cities", force: :cascade do |t|
     t.string "prefecture", null: false
@@ -24,16 +33,32 @@ ActiveRecord::Schema.define(version: 2019_05_28_134738) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "contents", force: :cascade do |t|
+    t.bigint "city_id", null: false
+    t.string "url", null: false
+    t.integer "category", null: false
+    t.string "main_title", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["city_id", "url", "main_title"], name: "index_contents_on_city_id_and_url_and_main_title", unique: true
+    t.index ["city_id"], name: "index_contents_on_city_id"
+  end
+
   create_table "municipality_infos", force: :cascade do |t|
     t.bigint "city_id"
-    t.string "url"
-    t.string "main_title"
+    t.string "url", null: false
+    t.integer "category", null: false
+    t.date "update_time", null: false
+    t.string "main_title", null: false
     t.string "sub_title"
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["city_id", "url", "main_title"], name: "index_municipality_infos_on_city_id_and_url_and_main_title", unique: true
     t.index ["city_id"], name: "index_municipality_infos_on_city_id"
   end
 
+  add_foreign_key "categories", "cities"
+  add_foreign_key "contents", "cities"
   add_foreign_key "municipality_infos", "cities"
 end
