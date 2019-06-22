@@ -38,6 +38,9 @@ module Crawler::Municipality
       # 項目
       item_urls = []
 
+      # カテゴリの新しいお知らせや重要なお知らせを取得
+      item_urls.concat(category.search("//ul[@class='icon04_cat bunrui']/li[@class='news_icon_none']/a/@href").map {|new_item_url| screen_transition(category, new_item_url)})
+
       # カテゴリの全セクション取得
       section_urls.concat(category.search("//div[@class='h2_box clear']/h2/a/@href").map {|section_url| screen_transition(category, section_url)})
 
@@ -70,6 +73,21 @@ module Crawler::Municipality
       section_detail_urls.each do |section_detail_url|
         next if section_detail_url.nil?
         item_urls.concat(section_detail_url.search("//ul[@class='icon04_cat bunrui']/li[@class='cat_topics_icon_none']/a/@href").map {|item_url| screen_transition(section_detail_url, item_url)})
+      end
+
+      # カテゴリが消費者センターの場合
+      if category.search("//div[@id='sub_h1_box']/h1").text == "消費生活"
+        cons_center_item_urls = []
+        item_urls.each do |item_url|
+          # セクション取得
+          tmp_section_urls = item_url.search("//div[@class='h3_box']/h3/a/@href").map {|section_url| screen_transition(item_url, section_url)}
+          # セクションから項目取得
+          tmp_section_urls.each do |tmp_section_url|
+            cons_center_item_urls.concat(tmp_section_url.search("//ul[@class='icon04_cat bunrui']/li[@class='cat_topics_icon_none']/a/@href").map {|item_url| screen_transition(tmp_section_url, item_url)})
+          end
+          cons_center_item_urls.concat(item_url.search("//ul/li[@class='i_list_box']/div[@class='ixt_side_right clear']/a/@href").map {|url| screen_transition(item_url, url)})
+        end
+        item_urls.concat(cons_center_item_urls)
       end
 
       content[i] = item_urls
