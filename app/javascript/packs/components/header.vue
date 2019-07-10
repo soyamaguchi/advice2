@@ -38,7 +38,7 @@
             }
         },
         mounted() {
-            // show dropdown on hover
+            /** show dropdown on hover */
             $('.ui.dropdown').dropdown({
                 on: 'hover'
             });

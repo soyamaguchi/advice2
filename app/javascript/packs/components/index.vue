@@ -31,60 +31,60 @@
                             <div class="image center aligned">
                                 <font-awesome-icon icon="graduation-cap" size="5x" class="fai"/>
                             </div>
-                            <div class="content">
+                            <div class="content main-title">
                                 <div class="header">Test補償制度testtestetsttesttesttesttesttest</div>
                                 <div class="meta"><span class="category">test-category</span></div>
                             </div>
                             <div class="extra content">
-                                <span><i class="user icon"></i>更新日：2019年7月7日</span>
+                                <span><i class="sync alternate icon"></i>更新日：2019年7月7日</span>
                             </div>
                         </div>
                         <div class="orange card">
                             <div class="image center aligned">
                                 <font-awesome-icon icon="graduation-cap" size="5x" class="fai"/>
                             </div>
-                            <div class="content">
+                            <div class="content main-title">
                                 <div class="header">Test補償制度01</div>
                                 <div class="meta"><span class="category">test-category</span></div>
                             </div>
                             <div class="extra content">
-                                <span><i class="user icon"></i>更新日：2019年7月7日</span>
+                                <span><i class="sync alternate icon"></i>更新日：2019年7月7日</span>
                             </div>
                         </div>
                         <div class="yellow card">
                             <div class="image center aligned">
                                 <font-awesome-icon icon="graduation-cap" size="5x" class="fai"/>
                             </div>
-                            <div class="content">
+                            <div class="content main-title">
                                 <div class="header">Test補償制度01</div>
                                 <div class="meta"><span class="category">test-category</span></div>
                             </div>
                             <div class="extra content">
-                                <span><i class="user icon"></i>更新日：2019年7月7日</span>
+                                <span><i class="sync alternate icon"></i>更新日：2019年7月7日</span>
                             </div>
                         </div>
                         <div class="violet card">
                             <div class="image center aligned">
                                 <font-awesome-icon icon="graduation-cap" size="5x" class="fai"/>
                             </div>
-                            <div class="content">
+                            <div class="content main-title">
                                 <div class="header">Test補償制度01</div>
                                 <div class="meta"><span class="category">test-category</span></div>
                             </div>
                             <div class="extra content">
-                                <span><i class="user icon"></i>更新日：2019年7月7日</span>
+                                <span><i class="sync alternate icon"></i>更新日：2019年7月7日</span>
                             </div>
                         </div>
                         <div class="pink card">
                             <div class="image center aligned">
                                 <font-awesome-icon icon="graduation-cap" size="5x" class="fai"/>
                             </div>
-                            <div class="content">
+                            <div class="content main-title">
                                 <div class="header">Test補償制度01</div>
                                 <div class="meta"><span class="category">test-category</span></div>
                             </div>
                             <div class="extra content">
-                                <span><i class="user icon"></i>更新日：2019年7月7日</span>
+                                <span><i class="sync alternate icon"></i>更新日：2019年7月7日</span>
                             </div>
                         </div>
                     </div>
@@ -166,8 +166,15 @@
     .card .fai {
         margin-top: 30px;
     }
+    .card .content.main-title {
+        height: 140px;
+    }
     .card .content .header {
         word-break : break-all;
+    }
+    .card .content .meta {
+        margin-left: 3px;
+        margin-top: 3px;
     }
 
 
