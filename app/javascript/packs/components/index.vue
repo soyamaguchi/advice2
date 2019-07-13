@@ -107,6 +107,10 @@
     export default {
         data: function() {
             return {
+                queryParams: {
+                    city: 1,
+                    category: "",
+                },
                 contents: []
             }
         },
@@ -122,10 +126,10 @@
         },
         methods: {
             getContents: function() {
-              axios.get('api/contents', { q: { tmp: "" } }).then((res) => {
+              axios.get('api/contents', { params: {q: this.queryParams } }).then((res) => {
 
               }, (err) => {
-
+                  console.log(err)
               });
             },
         }
