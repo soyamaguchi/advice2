@@ -42,11 +42,11 @@ module ContentQueries
 	        municipality_infos.category
       SQL
 
-      sql = sanitize_sql_array([query])
+      sql = Content.sanitize_sql_array([query])
       Content.find_by_sql(sql)
     end
 
-    def get_contents(params)
+    def get_contents
 
     end
 end

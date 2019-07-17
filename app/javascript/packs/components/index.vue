@@ -39,54 +39,6 @@
                                 <span><i class="sync alternate icon"></i>更新日：2019年7月7日</span>
                             </div>
                         </div>
-                        <div class="orange card">
-                            <div class="image center aligned">
-                                <font-awesome-icon icon="graduation-cap" size="5x" class="fai"/>
-                            </div>
-                            <div class="content main-title">
-                                <div class="header">Test補償制度01</div>
-                                <div class="meta"><span class="category">test-category</span></div>
-                            </div>
-                            <div class="extra content">
-                                <span><i class="sync alternate icon"></i>更新日：2019年7月7日</span>
-                            </div>
-                        </div>
-                        <div class="yellow card">
-                            <div class="image center aligned">
-                                <font-awesome-icon icon="graduation-cap" size="5x" class="fai"/>
-                            </div>
-                            <div class="content main-title">
-                                <div class="header">Test補償制度01</div>
-                                <div class="meta"><span class="category">test-category</span></div>
-                            </div>
-                            <div class="extra content">
-                                <span><i class="sync alternate icon"></i>更新日：2019年7月7日</span>
-                            </div>
-                        </div>
-                        <div class="violet card">
-                            <div class="image center aligned">
-                                <font-awesome-icon icon="graduation-cap" size="5x" class="fai"/>
-                            </div>
-                            <div class="content main-title">
-                                <div class="header">Test補償制度01</div>
-                                <div class="meta"><span class="category">test-category</span></div>
-                            </div>
-                            <div class="extra content">
-                                <span><i class="sync alternate icon"></i>更新日：2019年7月7日</span>
-                            </div>
-                        </div>
-                        <div class="pink card">
-                            <div class="image center aligned">
-                                <font-awesome-icon icon="graduation-cap" size="5x" class="fai"/>
-                            </div>
-                            <div class="content main-title">
-                                <div class="header">Test補償制度01</div>
-                                <div class="meta"><span class="category">test-category</span></div>
-                            </div>
-                            <div class="extra content">
-                                <span><i class="sync alternate icon"></i>更新日：2019年7月7日</span>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -96,6 +48,7 @@
 
 <script>
     import axios from 'axios';
+    import Qs from "qs";
     axios.defaults.headers.common = {
         'X-Requested-With': 'XMLHttpRequest',
         'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
@@ -115,21 +68,22 @@
             }
         },
         mounted() {
-            /** ドロップダウンボタン */
+            /** dropdown button */
             $('.combo.dropdown').dropdown({
                 on: 'hover',
                 action: 'combo'
             });
 
-            /** 初期表示時 */
+            /** init */
             this.getContents();
         },
         methods: {
             getContents: function() {
-              axios.get('api/contents', { params: {q: this.queryParams } }).then((res) => {
-
+              axios.get('api/contents', { params: { q: this.queryParams }, paramsSerializer: (params) => Qs.stringify(params, { arrayFormat: 'brackets' }) }).then((res) => {
+                  res.data.contents.forEach(v => this.contents.push(v));
               }, (err) => {
-                  console.log(err)
+                  this.contents.length = 0;
+                  console.log(err);
               });
             },
         }

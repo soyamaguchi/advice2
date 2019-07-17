@@ -65,5 +65,4 @@
     .title.text a {
         margin-left: -5px;
     }
-
 </style>
