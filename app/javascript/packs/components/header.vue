@@ -11,7 +11,7 @@
                     <h2>Advice2</h2>
                 </router-link>
             </div>
-            <div class="ui right dropdown item">
+            <div class="ui right item">
                 <span>
                     自治体：
                     <div class="ui inline dropdown">
@@ -19,6 +19,7 @@
                         <i class="dropdown icon"></i>
                         <div class="menu">
                             <div class="item">大阪府 大阪市</div>
+                            <div class="item">Test test</div>
                         </div>
                     </div>
                 </span>
@@ -34,9 +35,8 @@
             }
         },
         mounted() {
-            /** show dropdown on hover */
+            /** dropdown button */
             $('.ui.dropdown').dropdown({
-                on: 'hover'
             });
         },
         methods: {

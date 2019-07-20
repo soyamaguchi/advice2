@@ -29,7 +29,7 @@ module ContentQueries
 			      cities,
 			      categories
 		      WHERE
-			      cities.id = 1 AND
+			      cities.id = :city_id AND
 			      cities.id = categories.city_id
 	      ) AS tar_city_infos ON contents.city_id = tar_city_infos.city_id AND contents.category = tar_city_infos.category_id
         WHERE
@@ -42,11 +42,11 @@ module ContentQueries
 	        municipality_infos.category
       SQL
 
-      sql = Content.sanitize_sql_array([query])
+      sql = Content.sanitize_sql_array([query, city_id: params[:city]])
       Content.find_by_sql(sql)
     end
 
-    def get_contents
+    def get_contents(params)
 
     end
 end
