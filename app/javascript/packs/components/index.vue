@@ -95,7 +95,7 @@
         methods: {
             getContents: function() {
                 axios.get('api/contents', { params: { q: this.queryParams }, paramsSerializer: (params) => Qs.stringify(params, { arrayFormat: 'brackets' }) }).then((res) => {
-                    this.contents.length = 0
+                    this.contents.splice(0)
                     res.data.contents.forEach(v => this.contents.push(v))
                     this.city = (this.contents.length > 0) ? this.contents[0].city_id : 1
                 }, (err) => {
