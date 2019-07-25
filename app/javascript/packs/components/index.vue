@@ -33,10 +33,10 @@
             </div>
             <div class="row">
                 <div class="column">
-                    <div class="ui link four stackable cards">
-                        <div v-for="(c, i) in contents" :id="i" :class="[color(i), 'card']" @click="openModalContent">
+                    <div class="ui raised link four stackable cards">
+                        <div v-for="(c, i) in contents" :id="i" :class="[color(i), 'raised link card']" @click="openModalContent">
                             <div class="image center aligned">
-                                <font-awesome-icon icon="graduation-cap" size="5x" class="fai"/>
+                                <i :class="['huge', icons[c.city_id][c.category_id], 'icon']"></i>
                             </div>
                             <div class="content main-title">
                                 <div class="header">{{ c.main_title }}</div>
@@ -51,11 +51,19 @@
                         <template slot="header">
                             <a @click="closeModalContent" href="javascript:void(0)" class="close-modal">×</a>
                         </template>
-                        <p>Vue.js Modal Window!</p>
-                        <div>TestSample</div>
+                        <template slot="title">
+                            <p class="modal main-title">{{ targetModalContent.main_title }}</p>
+                            <div :class="['ui', targetModalContent.color, 'ribbon label']">
+                                <i :class="[icons[targetModalContent.city_id][targetModalContent.category_id], 'icon']"></i> {{ targetModalContent.category_name }}
+                            </div>
+                        </template>
+                        <p class="modal sub-title" v-if="targetModalContent.sub_title">{{ targetModalContent.sub_title }}</p>
+                        <p class="modal content">{{ targetModalContent.content }}</p>
                         <template slot="footer">
                             <p>下記の出典元情報を加工して掲載しております</p>
-                            <a :href="targetModalContent.url" target="_blank">出典：{{ targetModalContent.prefecture }} {{ targetModalContent.city }}{{ targetModalContent.ward }}のサイト</a>
+                            <a :href="targetModalContent.url" target="_blank">
+                                <i class="book icon"></i> 出典：{{ targetModalContent.prefecture }} {{ targetModalContent.city }}{{ targetModalContent.ward }}のサイト
+                            </a>
                         </template>
                     </ModalContent>
                 </div>
@@ -84,6 +92,10 @@
                 /** categories */
                 categories: {
                     1: ["行政オンラインサービス", "妊娠・出産", "子育て", "教育", "結婚・離婚", "引越し・住まい", "就職・退職", "介護・高齢者", "ご不幸", "台風21号関連", "大阪府北部を震源とする地震関連", "安全・安心", "戸籍・住民票・印鑑登録", "税", "国民健康保健", "国民年金", "水道・ガス・電気", "交通", "駐輪・駐車", "都市計画", "ごみ・環境保全", "食品・衛生", "ペット・動物", "消費生活", "健康・医療・福祉", "文化・スポーツ・生涯学習", "市民活動"],
+                },
+                /** icons */
+                icons: {
+                    1: ["desktop", "heart outline", "child", "edit", "bell outline", "home", "building", "wheelchair", "bed", "certificate", "chart area", "shield alternate", "registered", "yen sign", "medkit", "money bill alternate", "tint", "road", "car", "globe", "trash", "utensil spoon", "paw", "cart plus", "hospital outline", "play", "handshake outline"],
                 },
                 /** modal active content */
                 targetModalContent: null,
@@ -126,6 +138,7 @@
             openModalContent: function(e) {
                 const contentDom = e.target.offsetParent || e.target.parentElement.offsetParent || e.target.parentElement.parentElement.offsetParent
                 this.targetModalContent = this.contents[contentDom.id]
+                this.$set(this.targetModalContent, "color", contentDom.className.split(" ")[0])
             },
             closeModalContent: function() {
                 this.targetModalContent = null
@@ -133,7 +146,8 @@
             color: function(i) {
                 const colorLength = this.colorArr.length
                 if (i < colorLength) return this.colorArr[i]
-                return this.colorArr[i - colorLength]
+                const incr = Math.floor(i / 13)
+                return this.colorArr[i - colorLength * incr]
             },
         }
     }
@@ -166,22 +180,41 @@
     /* content */
     .card .image {
         height: 130px;
+        color: rgba(0, 0, 0, 0.8);
     }
-    .card .fai {
-        margin-top: 30px;
+    .card .huge.icon {
+        margin-top: 35px;
     }
     .card .content.main-title {
         height: 140px;
     }
     .card .content .header {
-        word-break : break-all;
+        word-break: break-all;
     }
     .card .content .meta {
         margin-left: 3px;
         margin-top: 3px;
     }
 
+    /* modal「×」button color */
     a.close-modal {
-        color: rgba(0, 0, 0, 0.1);
+        color: rgba(0, 0, 0, 0.2);
+    }
+    /* modal maintitle */
+    .modal.main-title {
+        font-size: 28px;
+        font-family: "Lato", "Sawarabi Gothic", "メイリオ", "Hiragino Kaku Gothic ProN", sans-serif;
+    }
+    /* modal subtitle */
+    .modal.sub-title {
+        margin-bottom: 0px;
+        font-size: 20px;
+        font-family: "Lato", "Sawarabi Gothic", "メイリオ", "Hiragino Kaku Gothic ProN", sans-serif;
+    }
+    /* modal content */
+    .modal.content {
+        margin-top: 8px;
+        font-size: 16px;
+        color: rgba(0, 0, 0, 0.7);
     }
 </style>
