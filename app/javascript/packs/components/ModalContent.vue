@@ -7,6 +7,9 @@
                         <a @click="$emit('close')">×</a>
                     </slot>
                 </header>
+                <div class="modal-title">
+                    <slot name="title"></slot>
+                </div>
                 <div class="modal-content">
                     <slot></slot>
                 </div>
@@ -40,9 +43,12 @@
         }
 
         &-window {
-            background: #fff;
+            position: fixed;
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 4px;
             overflow: hidden;
+            height: 60%;
+            width: 40%;
         }
 
         &-header {
@@ -51,14 +57,23 @@
             font-size: 25px;
         }
 
-        &-content {
+        &-title {
             padding: 10px 20px;
-            size: 100px;
+        }
+
+        &-content {
+            overflow-y: auto;
+            height: 295px;
+            padding: 10px 20px;
         }
 
         &-footer {
-            background: #ccc;
-            padding: 10px;
+            position: absolute;
+            bottom: 0;
+            background: rgba(204, 204, 204, 0.4);
+            width: 100%;
+            height: 20%;
+            padding: 20px;
             text-align: left;
         }
     }

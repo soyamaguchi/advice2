@@ -40,7 +40,7 @@ module ContentQueries
         ORDER BY
 	        municipality_infos.city_id,
 	        municipality_infos.category,
-          municipality_infos.update_time
+          municipality_infos.update_time DESC
       SQL
 
       sql = Content.sanitize_sql_array([query, city_id: params[:city]])
