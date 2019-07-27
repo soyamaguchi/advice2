@@ -31,14 +31,16 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="ui container contents">
             <div class="row">
                 <div class="column">
                     <div class="ui raised link four stackable cards">
-                        <div v-for="(c, i) in contents" :id="i" :class="[color(i), 'raised link card']" @click="openModalContent">
-                            <div class="image center aligned">
-                                <i :class="['huge', icons[c.city_id][c.category_id], 'icon']"></i>
-                            </div>
-                            <div class="content main-title">
+                        <div v-for="(c, i) in contents" :id="i" class="raised link card" @click="openModalContent">
+                            <div class="content main-title center aligned">
+                                <div>
+                                    <i :class="['big circular', color(c.category_id), icons[c.city_id][c.category_id], 'icon', transparentColor(c.category_id)]"></i>
+                                </div>
                                 <div class="header">{{ c.main_title }}</div>
                                 <div class="meta"><span class="category">{{ c.category_name }}</span></div>
                             </div>
@@ -89,13 +91,14 @@
             return {
                 /** semantic ui colors */
                 colorArr: ["red", "orange", "yellow", "olive", "green", "teal", "blue", "violet", "purple", "pink", "brown", "grey", "black"],
+                transparentColorArr: ["transparent-red", "transparent-orange", "transparent-yellow", "transparent-olive", "transparent-green", "transparent-teal", "transparent-blue", "transparent-violet", "transparent-purple", "transparent-pink", "transparent-brown", "transparent-grey", "transparent-black"],
                 /** categories */
                 categories: {
                     1: ["行政オンラインサービス", "妊娠・出産", "子育て", "教育", "結婚・離婚", "引越し・住まい", "就職・退職", "介護・高齢者", "ご不幸", "台風21号関連", "大阪府北部を震源とする地震関連", "安全・安心", "戸籍・住民票・印鑑登録", "税", "国民健康保健", "国民年金", "水道・ガス・電気", "交通", "駐輪・駐車", "都市計画", "ごみ・環境保全", "食品・衛生", "ペット・動物", "消費生活", "健康・医療・福祉", "文化・スポーツ・生涯学習", "市民活動"],
                 },
                 /** icons */
                 icons: {
-                    1: ["desktop", "heart outline", "child", "edit", "bell outline", "home", "building", "wheelchair", "bed", "certificate", "chart area", "shield alternate", "registered", "yen sign", "medkit", "money bill alternate", "tint", "road", "car", "globe", "trash", "utensil spoon", "paw", "cart plus", "hospital outline", "play", "handshake outline"],
+                    1: ["desktop", "female", "sign language", "edit", "bell outline", "home", "building", "wheelchair", "bed", "certificate", "chart area", "shield alternate", "clone outline", "yen sign", "medkit", "money bill alternate outline", "tint", "road", "car", "globe", "trash", "utensil spoon", "paw", "shopping cart", "stethoscope", "play", "handshake outline"],
                 },
                 /** modal active content */
                 targetModalContent: null,
@@ -149,6 +152,12 @@
                 const incr = Math.floor(i / 13)
                 return this.colorArr[i - colorLength * incr]
             },
+            transparentColor: function(i) {
+                const transparentColorLength = this.transparentColorArr.length
+                if (i < transparentColorLength) return this.transparentColorArr[i]
+                const incr = Math.floor(i / 13)
+                return this.transparentColorArr[i - transparentColorLength * incr]
+            },
         }
     }
 
@@ -159,7 +168,7 @@
     [v-cloak] {
         display: none;
     }
-    .ui.container {
+    .ui.grid.container {
         margin-top: 60px;
     }
 
@@ -177,22 +186,21 @@
         margin: 20px 0px 20px 0px;
     }
 
-    /* content */
-    .card .image {
-        height: 130px;
-        color: rgba(0, 0, 0, 0.8);
-    }
-    .card .huge.icon {
-        margin-top: 35px;
-    }
+    /* content card */
     .card .content.main-title {
-        height: 140px;
+        height: 230px;
+    }
+    .card .big.icon {
+        margin-bottom: 25px;
+    }
+    .card i.circular.icon {
+        -webkit-box-shadow: initial;
+        box-shadow: initial;
     }
     .card .content .header {
         word-break: break-all;
     }
     .card .content .meta {
-        margin-left: 3px;
         margin-top: 3px;
     }
 
@@ -203,17 +211,14 @@
     /* modal maintitle */
     .modal.main-title {
         font-size: 28px;
-        font-family: "Lato", "Sawarabi Gothic", "メイリオ", "Hiragino Kaku Gothic ProN", sans-serif;
     }
     /* modal subtitle */
     .modal.sub-title {
-        margin-bottom: 0px;
+        margin-bottom: 10px;
         font-size: 20px;
-        font-family: "Lato", "Sawarabi Gothic", "メイリオ", "Hiragino Kaku Gothic ProN", sans-serif;
     }
     /* modal content */
     .modal.content {
-        margin-top: 8px;
         font-size: 16px;
         color: rgba(0, 0, 0, 0.7);
     }

@@ -15,8 +15,49 @@
  */
 
 @import "semantic-ui";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
 body {
-  background-color: #fffff9;
+  background-color: #FFFFFF;
 }
 
+/* color */
+.transparent-red {
+  background-color: rgba(219, 40, 40, 0.2);
+}
+.transparent-orange {
+  background-color: rgba(242, 113, 28, 0.2);
+}
+.transparent-yellow {
+  background-color: rgba(251, 189, 8, 0.2);
+}
+.transparent-olive {
+  background-color: rgba(181, 204, 24, 0.2);
+}
+.transparent-green {
+  background-color: rgba(33, 186, 69, 0.2);
+}
+.transparent-teal {
+  background-color: rgba(0, 181, 173, 0.2);
+}
+.transparent-blue {
+  background-color: rgba(33, 133, 208, 0.2);
+}
+.transparent-violet {
+  background-color: rgba(100, 53, 201, 0.2);
+}
+.transparent-purple {
+  background-color: rgba(163, 51, 200, 0.2);
+}
+.transparent-pink {
+  background-color: rgba(224, 57, 151, 0.2);
+}
+.transparent-brown {
+  background-color: rgba(165, 103, 63, 0.2);
+}
+.transparent-grey {
+  background-color: rgba(118, 118, 118, 0.2);
+}
+.transparent-black {
+  background-color: rgba(27, 28, 29, 0.2);
+}

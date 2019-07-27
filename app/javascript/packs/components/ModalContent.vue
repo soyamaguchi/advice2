@@ -41,7 +41,6 @@
             height: 100%;
             background: rgba(0, 0, 0, 0.6);
         }
-
         &-window {
             position: fixed;
             background: rgba(255, 255, 255, 0.9);
@@ -50,27 +49,23 @@
             height: 60%;
             width: 40%;
         }
-
         &-header {
             text-align: right;
-            padding: 5px 10px;
+            padding: 5px 80px;
             font-size: 25px;
         }
-
         &-title {
             padding: 10px 20px;
         }
-
         &-content {
             overflow-y: auto;
             height: 295px;
             padding: 10px 20px;
         }
-
         &-footer {
             position: absolute;
             bottom: 0;
-            background: rgba(204, 204, 204, 0.4);
+            background: rgba(204, 204, 204, 0.1);
             width: 100%;
             height: 20%;
             padding: 20px;
