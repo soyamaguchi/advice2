@@ -15,7 +15,22 @@
  */
 
 @import "semantic-ui";
-@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+:root {
+  --transparent-red: rgba(219, 40, 40, 0.2);
+  --transparent-orange: rgba(242, 113, 28, 0.2);
+  --transparent-yellow: rgba(251, 189, 8, 0.2);
+  --transparent-olive: rgba(181, 204, 24, 0.2);
+  --transparent-green: rgba(33, 186, 69, 0.2);
+  --transparent-teal: rgba(0, 181, 173, 0.2);
+  --transparent-blue: rgba(33, 133, 208, 0.2);
+  --transparent-violet: rgba(100, 53, 201, 0.2);
+  --transparent-purple: rgba(163, 51, 200, 0.2);
+  --transparent-pink: rgba(224, 57, 151, 0.2);
+  --transparent-brown: rgba(165, 103, 63, 0.2);
+  --transparent-grey: rgba(118, 118, 118, 0.2);
+  --transparent-black: rgba(27, 28, 29, 0.2);
+}
 
 body {
   background-color: #FFFFFF;
@@ -23,41 +38,80 @@ body {
 
 /* color */
 .transparent-red {
-  background-color: rgba(219, 40, 40, 0.2);
+  background-color: var(--transparent-red);
+}
+.ui.transparent-red.ribbon.label {
+  background-color: var(--transparent-red);
 }
 .transparent-orange {
-  background-color: rgba(242, 113, 28, 0.2);
+  background-color: var(--transparent-orange);
+}
+.ui.transparent-orange.ribbon.label {
+  background-color: var(--transparent-orange);
 }
 .transparent-yellow {
-  background-color: rgba(251, 189, 8, 0.2);
+  background-color: var(--transparent-yellow);
+}
+.ui.transparent-yellow.ribbon.label {
+  background-color: var(--transparent-yellow);
 }
 .transparent-olive {
-  background-color: rgba(181, 204, 24, 0.2);
+  background-color: var(--transparent-olive);
+}
+.ui.transparent-olive.ribbon.label {
+  background-color: var(--transparent-olive);
 }
 .transparent-green {
-  background-color: rgba(33, 186, 69, 0.2);
+  background-color: var(--transparent-green);
+}
+.ui.transparent-green.ribbon.label {
+  background-color: var(--transparent-green);
 }
 .transparent-teal {
-  background-color: rgba(0, 181, 173, 0.2);
+  background-color: var(--transparent-teal);
+}
+.ui.transparent-teal.ribbon.label {
+  background-color: var(--transparent-teal);
 }
 .transparent-blue {
-  background-color: rgba(33, 133, 208, 0.2);
+  background-color: var(--transparent-blue);
+}
+.ui.transparent-blue.ribbon.label {
+  background-color: var(--transparent-blue);
 }
 .transparent-violet {
-  background-color: rgba(100, 53, 201, 0.2);
+  background-color: var(--transparent-violet);
+}
+.ui.transparent-violet.ribbon.label {
+  background-color: var(--transparent-violet);
 }
 .transparent-purple {
-  background-color: rgba(163, 51, 200, 0.2);
+  background-color: var(--transparent-purple);
+}
+.ui.transparent-purple.ribbon.label {
+  background-color: var(--transparent-purple);
 }
 .transparent-pink {
-  background-color: rgba(224, 57, 151, 0.2);
+  background-color: var(--transparent-pink);
+}
+.ui.transparent-pink.ribbon.label {
+  background-color: var(--transparent-pink);
 }
 .transparent-brown {
-  background-color: rgba(165, 103, 63, 0.2);
+  background-color: var(--transparent-brown);
+}
+.ui.transparent-brown.ribbon.label {
+  background-color: var(--transparent-brown);
 }
 .transparent-grey {
-  background-color: rgba(118, 118, 118, 0.2);
+  background-color: var(--transparent-grey);
+}
+.ui.transparent-grey.ribbon.label {
+  background-color: var(--transparent-grey);
 }
 .transparent-black {
-  background-color: rgba(27, 28, 29, 0.2);
+  background-color: var(--transparent-black);
+}
+.ui.transparent-black.ribbon.label {
+  background-color: var(--transparent-black);
 }

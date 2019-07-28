@@ -38,9 +38,7 @@
                     <div class="ui raised link four stackable cards">
                         <div v-for="(c, i) in contents" :id="i" class="raised link card" @click="openModalContent">
                             <div class="content main-title center aligned">
-                                <div>
-                                    <i :class="['big circular', color(c.category_id), icons[c.city_id][c.category_id], 'icon', transparentColor(c.category_id)]"></i>
-                                </div>
+                                <i :class="['big circular', color(c.category_id), icons[c.city_id][c.category_id], 'icon', transparentColor(c.category_id)]"></i>
                                 <div class="header">{{ c.main_title }}</div>
                                 <div class="meta"><span class="category">{{ c.category_name }}</span></div>
                             </div>
@@ -141,7 +139,7 @@
             openModalContent: function(e) {
                 const contentDom = e.target.offsetParent || e.target.parentElement.offsetParent || e.target.parentElement.parentElement.offsetParent
                 this.targetModalContent = this.contents[contentDom.id]
-                this.$set(this.targetModalContent, "color", contentDom.className.split(" ")[0])
+                this.$set(this.targetModalContent, "color", contentDom.firstChild.firstChild.className.split(" ").slice(-1)[0])
             },
             closeModalContent: function() {
                 this.targetModalContent = null

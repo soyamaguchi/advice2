@@ -41,9 +41,10 @@
             height: 100%;
             background: rgba(0, 0, 0, 0.6);
         }
+        /* Background pattern from Toptal Subtle Patterns */
         &-window {
             position: fixed;
-            background: rgba(255, 255, 255, 0.9);
+            background-image: url("/assets/email-pattern.png");
             border-radius: 4px;
             overflow: hidden;
             height: 60%;
@@ -51,7 +52,7 @@
         }
         &-header {
             text-align: right;
-            padding: 5px 80px;
+            padding: 5px 10px;
             font-size: 25px;
         }
         &-title {
@@ -65,7 +66,7 @@
         &-footer {
             position: absolute;
             bottom: 0;
-            background: rgba(204, 204, 204, 0.1);
+            background: rgba(204, 204, 204, 0.2);
             width: 100%;
             height: 20%;
             padding: 20px;
