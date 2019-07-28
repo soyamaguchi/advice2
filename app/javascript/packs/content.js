@@ -1,6 +1,7 @@
 import Vue from 'vue/dist/vue.esm'
-import Header from './components/header'
 import Router from './router/router'
+import Header from './components/header'
+import Footer from './components/footer'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
@@ -14,5 +15,6 @@ var app = new Vue({
     el: '#app',
     components: {
         'navbar': Header,
+        'footerinfo': Footer,
     }
 });

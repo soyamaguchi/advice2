@@ -1,72 +1,68 @@
 <template>
-    <div>
-        <div class="ui grid container">
-            <div class="row">
-                <div class="column">
-                    <section>
-                        <h1 class="ui header">知っておいて損はないお得な自治体情報</h1>
-                        <p class="sub-header">知らないことで損をしないために</p>
-                    </section>
-                </div>
+    <div class="ui grid container">
+        <div class="row">
+            <div class="column">
+                <section>
+                    <h1 class="ui header">知っておいて損はないお得な自治体情報</h1>
+                    <p class="sub-header">知らないことで損をしないために</p>
+                </section>
             </div>
-            <div class="row">
-                <div class="column center aligned">
-                    <div class="ui floating dropdown labeled icon orange button">
-                        <i class="filter icon"></i>
-                        <span class="text">　全て　</span>
-                        <div class="menu">
-                            <div class="ui icon search input">
-                                <i class="search icon"></i>
-                                <input type="text" placeholder="カテゴリ検索">
-                            </div>
-                            <div class="divider"></div>
-                            <div class="header"><i class="tags icon"></i>カテゴリ</div>
-                            <div class="scrolling menu">
-                                <div v-for="(category, i) in categories[city]" :id="i" @click="categoryContents" class="item">
-                                    <div :class="[color(i), 'ui', 'empty', 'circular', 'label']"></div>
-                                    {{ category }}
-                                </div>
+        </div>
+        <div class="row">
+            <div class="column center aligned">
+                <div class="ui floating dropdown labeled icon orange button">
+                    <i class="filter icon"></i>
+                    <span class="text">　全て　</span>
+                    <div class="menu">
+                        <div class="ui icon search input">
+                            <i class="search icon"></i>
+                            <input type="text" placeholder="カテゴリ検索">
+                        </div>
+                        <div class="divider"></div>
+                        <div class="header"><i class="tags icon"></i>カテゴリ</div>
+                        <div class="scrolling menu">
+                            <div v-for="(category, i) in categories[city]" :id="i" @click="categoryContents" class="item">
+                                <div :class="[color(i), 'ui', 'empty', 'circular', 'label']"></div>
+                                {{ category }}
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="ui container contents">
-            <div class="row">
-                <div class="column">
-                    <div class="ui raised link four stackable cards">
-                        <div v-for="(c, i) in contents" :id="i" class="raised link card" @click="openModalContent">
-                            <div class="content main-title center aligned">
-                                <i :class="['big circular', color(c.category_id), icons[c.city_id][c.category_id], 'icon', transparentColor(c.category_id)]"></i>
-                                <div class="header">{{ c.main_title }}</div>
-                                <div class="meta"><span class="category">{{ c.category_name }}</span></div>
-                            </div>
-                            <div class="extra content">
-                                <span><i class="sync alternate icon"></i>更新日：{{ c.update_time }}</span>
-                            </div>
+        <div class="row">
+            <div class="column">
+                <div class="ui raised link four stackable cards">
+                    <div v-for="(c, i) in contents" :id="i" class="raised link card" @click="openModalContent">
+                        <div class="content main-title center aligned">
+                            <i :class="['big circular', color(c.category_id), icons[c.city_id][c.category_id], 'icon', transparentColor(c.category_id)]"></i>
+                            <div class="header">{{ c.main_title }}</div>
+                            <div class="meta"><span class="category">{{ c.category_name }}</span></div>
+                        </div>
+                        <div class="extra content">
+                            <span><i class="sync alternate icon"></i>更新日：{{ c.update_time }}</span>
                         </div>
                     </div>
-                    <ModalContent @close="closeModalContent" v-if="targetModalContent">
-                        <template slot="header">
-                            <a @click="closeModalContent" href="javascript:void(0)" class="close-modal">×</a>
-                        </template>
-                        <template slot="title">
-                            <p class="modal main-title">{{ targetModalContent.main_title }}</p>
-                            <div :class="['ui', targetModalContent.color, 'ribbon label']">
-                                <i :class="[icons[targetModalContent.city_id][targetModalContent.category_id], 'icon']"></i> {{ targetModalContent.category_name }}
-                            </div>
-                        </template>
-                        <p class="modal sub-title" v-if="targetModalContent.sub_title">{{ targetModalContent.sub_title }}</p>
-                        <p class="modal content">{{ targetModalContent.content }}</p>
-                        <template slot="footer">
-                            <p>下記の出典元情報を加工して掲載しております</p>
-                            <a :href="targetModalContent.url" target="_blank">
-                                <i class="book icon"></i> 出典：{{ targetModalContent.prefecture }} {{ targetModalContent.city }}{{ targetModalContent.ward }}のサイト
-                            </a>
-                        </template>
-                    </ModalContent>
                 </div>
+                <ModalContent @close="closeModalContent" v-if="targetModalContent">
+                    <template slot="header">
+                        <a @click="closeModalContent" href="javascript:void(0)" class="close-modal">×</a>
+                    </template>
+                    <template slot="title">
+                        <p class="modal main-title">{{ targetModalContent.main_title }}</p>
+                        <div :class="['ui', targetModalContent.color, 'ribbon label']">
+                            <i :class="[icons[targetModalContent.city_id][targetModalContent.category_id], 'icon']"></i> {{ targetModalContent.category_name }}
+                        </div>
+                    </template>
+                    <p class="modal sub-title" v-if="targetModalContent.sub_title">{{ targetModalContent.sub_title }}</p>
+                    <p class="modal content">{{ targetModalContent.content }}</p>
+                    <template slot="footer">
+                        <p>下記の出典元情報を加工して掲載しております</p>
+                        <a :href="targetModalContent.url" target="_blank">
+                            <i class="book icon"></i> 出典：{{ targetModalContent.prefecture }} {{ targetModalContent.city }}{{ targetModalContent.ward }}のサイト
+                        </a>
+                    </template>
+                </ModalContent>
             </div>
         </div>
     </div>
