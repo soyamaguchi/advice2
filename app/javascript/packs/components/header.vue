@@ -19,7 +19,6 @@
                         <i class="dropdown icon"></i>
                         <div class="menu">
                             <div class="item">大阪府 大阪市</div>
-                            <div class="item">Test test</div>
                         </div>
                     </div>
                 </span>

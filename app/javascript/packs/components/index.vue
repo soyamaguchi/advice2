@@ -163,6 +163,9 @@
         display: none;
     }
     .ui.grid.container {
+        display: flex;
+        flex-direction: column;
+        min-height: 60vh;
         margin-top: 60px;
     }
 

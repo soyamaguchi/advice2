@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Index from '../components/index'
 import Terms from '../components/terms'
 import Privacy from '../components/privacy'
+import License from '../components/license'
 
 Vue.use(VueRouter)
 
@@ -11,6 +12,7 @@ export default new VueRouter({
     routes: [
         { path: '/', component: Index },
         { path: '/terms', component: Terms },
-        { path: '/privacy', components: Privacy },
+        { path: '/privacy', component: Privacy },
+        { path: '/license', component: License },
     ],
 })
