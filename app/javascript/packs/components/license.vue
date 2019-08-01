@@ -1,5 +1,4 @@
 <template>
-    
 </template>
 
 <script>
@@ -7,6 +6,11 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+    /* 全体 */
+    [v-cloak] {
+        display: none;
+    }
+
 
 </style>
