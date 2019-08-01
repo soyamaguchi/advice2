@@ -1,7 +1,7 @@
 <template>
     <div class="ui container">
         <div class="ui raised segment">
-            <h1 class="ui header title">プライバシーポリシー</h1>
+            <h2 class="ui header title">プライバシーポリシー</h2>
             <p>
                 管理者は，このウェブサイト上で提供するサービス（以下，「本サービス」といいます。）における，
                 ユーザーの個人情報の取扱いについて，以下のとおりプライバシーポリシー（以下，「本ポリシー」といいます。）を定めます。
