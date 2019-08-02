@@ -1,4 +1,5 @@
 import Vue from 'vue/dist/vue.esm'
+import store from './store/contents-store'
 import Router from './router/router'
 import Header from './components/header'
 import Footer from './components/footer'
@@ -16,5 +17,6 @@ var app = new Vue({
     components: {
         'navbar': Header,
         'footerinfo': Footer,
-    }
+    },
+    store,
 });

@@ -71,7 +71,8 @@
 <script>
     import ModalContent from './ModalContent';
     import axios from 'axios';
-    import Qs from "qs";
+    import Qs from 'qs';
+    /*import { mapActions, mapGetters, mapMutations, mapState } from 'vuex';*/
     axios.defaults.headers.common = {
         'X-Requested-With': 'XMLHttpRequest',
         'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
@@ -115,6 +116,7 @@
             });
 
             /** init */
+            this.setScreenIdentFlag();
             this.getContents();
         },
         methods: {
@@ -152,6 +154,12 @@
                 const incr = Math.floor(i / 13)
                 return this.transparentColorArr[i - transparentColorLength * incr]
             },
+            setScreenIdentFlag: function() {
+                this.$store.commit('isIndex', true)
+            },
+            /*...mapActions('contents', {
+                'isIndex': 'isIndex'
+            }),*/
         }
     }
 

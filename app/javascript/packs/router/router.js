@@ -8,6 +8,9 @@ import License from '../components/license'
 Vue.use(VueRouter)
 
 export default new VueRouter({
+    scrollBehavior(to, from, savedPosition) {
+        return savedPosition || { x: 0, y: 0 }
+    },
     mode: 'history',
     routes: [
         { path: '/', component: Index },

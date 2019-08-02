@@ -11,7 +11,7 @@
                     <h2>Advice2</h2>
                 </router-link>
             </div>
-            <div class="ui right item">
+            <div class="ui right item" v-show="isIndex">
                 <span>
                     自治体：
                     <div class="ui inline dropdown">
@@ -33,13 +33,18 @@
             return {
             }
         },
+        computed: {
+            isIndex() {
+                return this.$store.state.isIndex
+            }
+        },
         mounted() {
             /** dropdown button */
             $('.ui.dropdown').dropdown({
             });
         },
         methods: {
-        }
+        },
     }
 </script>
 

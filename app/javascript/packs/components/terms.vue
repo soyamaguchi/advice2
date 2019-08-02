@@ -101,6 +101,15 @@
 
 <script>
     export default {
+        mounted() {
+            /** init */
+            this.setScreenIdentFlag()
+        },
+        methods: {
+            setScreenIdentFlag: function() {
+                this.$store.commit('isIndex', false)
+            },
+        }
     }
 </script>
 
