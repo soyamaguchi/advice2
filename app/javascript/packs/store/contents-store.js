@@ -21,11 +21,16 @@ const contents = {
 export default new Vuex.Store({
     state: {
         isIndex: false,
+        indexInitFlag: false,
     },
     mutations: {
         /** 表示画面識別 */
         isIndex(state, value) {
             state.isIndex = value
+        },
+        /** indexcomponent初期化 */
+        indexInitFlag(state, value) {
+            state.indexInitFlag = value
         },
     },
     modules: {

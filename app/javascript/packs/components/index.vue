@@ -95,6 +95,8 @@
                 icons: {
                     1: ["desktop", "female", "sign language", "edit", "bell outline", "home", "building", "wheelchair", "bed", "certificate", "chart area", "shield alternate", "clone outline", "yen sign", "medkit", "money bill alternate outline", "tint", "road", "car", "globe", "trash", "utensil spoon", "paw", "shopping cart", "stethoscope", "play", "handshake outline"],
                 },
+                /** indexcomponen init exist*/
+                indexInitFlag: this.$store.state.indexInitFlag,
                 /** modal active content */
                 targetModalContent: null,
                 /** queryparameter */
@@ -107,17 +109,20 @@
                 city: "",
             }
         },
-        computed: {
-        },
         mounted() {
-            /** dropdown button */
-            $('.combo.dropdown').dropdown({
-                action: 'combo'
-            });
+            if (this.indexInitFlag) {
+                location.reload();
+            } else {
+                /** dropdown button */
+                $('.combo.dropdown').dropdown({
+                    action: 'combo'
+                });
 
-            /** init */
-            this.setScreenIdentFlag();
-            this.getContents();
+                /** init */
+                this.setScreenIdentFlag();
+                this.setIndexInitFlag();
+                this.getContents();
+            }
         },
         methods: {
             getContents: function() {
@@ -156,6 +161,9 @@
             },
             setScreenIdentFlag: function() {
                 this.$store.commit('isIndex', true)
+            },
+            setIndexInitFlag: function() {
+                this.$store.commit('indexInitFlag', true)
             },
             /*...mapActions('contents', {
                 'isIndex': 'isIndex'
