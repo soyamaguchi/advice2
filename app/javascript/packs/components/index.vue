@@ -3,7 +3,7 @@
         <div class="row">
             <div class="column">
                 <section>
-                    <h1 class="ui header">知っておいて損はないお得な自治体情報</h1>
+                    <h1 class="ui header">知っておいて損はない<br>お得な自治体情報</h1>
                     <p class="sub-header">知らないことで損をしないために</p>
                 </section>
             </div>
@@ -12,7 +12,7 @@
             <div class="column center aligned">
                 <div class="ui floating dropdown labeled icon orange button">
                     <i class="filter icon"></i>
-                    <span class="text">　全て　</span>
+                    <span class="category text">全て</span>
                     <div class="menu">
                         <div class="ui icon search input">
                             <i class="search icon"></i>
@@ -49,7 +49,10 @@
                         <a @click="closeModalContent" href="javascript:void(0)" class="close-modal">×</a>
                     </template>
                     <template slot="title">
-                        <p class="modal main-title">{{ targetModalContent.main_title }}</p>
+                        <div class="modal-title">
+                            <p class="modal main-title">{{ targetModalContent.main_title }}</p>
+<!--                            {{ targetModalContent.main_title }}-->
+                        </div>
                         <div :class="['ui', targetModalContent.color, 'ribbon label']">
                             <i :class="[icons[targetModalContent.city_id][targetModalContent.category_id], 'icon']"></i> {{ targetModalContent.category_name }}
                         </div>
@@ -170,7 +173,6 @@
             }),*/
         }
     }
-
 </script>
 
 <style lang="scss" scoped>
@@ -181,8 +183,8 @@
     .ui.grid.container {
         display: flex;
         flex-direction: column;
-        min-height: 60vh;
-        margin-top: 60px;
+        min-height: 65vh;
+        margin-top: 20px;
     }
 
     /* description */
@@ -196,7 +198,12 @@
 
     /* category button */
     .ui.button {
-        margin: 20px 0px 20px 0px;
+        margin: 20px 0px 25px 0px;
+        width: 320px;
+        .category.text {
+            width: 100%;
+            text-align: center;
+        }
     }
 
     /* content card */
@@ -222,17 +229,69 @@
         color: rgba(0, 0, 0, 0.2);
     }
     /* modal maintitle */
-    .modal.main-title {
-        font-size: 28px;
+    .modal-title {
+        p {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-size: 22px;
+        }
     }
     /* modal subtitle */
     .modal.sub-title {
         margin-bottom: 10px;
-        font-size: 20px;
+        font-size: 18px;
     }
     /* modal content */
     .modal.content {
         font-size: 16px;
         color: rgba(0, 0, 0, 0.7);
+    }
+
+    /* semantic-ui cardのmargin上書き */
+    @media only screen and (max-width: 767px) {
+        .ui.stackable.cards .card {
+            margin: 2em 1em;
+        }
+    }
+
+    /* SP(狭い画面用) */
+    @media screen and (max-width: 379px) {
+        .ui.header {
+            font-size: 24px;
+        }
+        .ui.button {
+            width: 87%;
+        }
+    }
+    /* SP縦 */
+    @media screen and (min-width: 380px) and (max-width: 479px) {
+        .ui.header {
+            font-size: 24px;
+        }
+        .ui.button {
+            width: 87%;
+        }
+        .ui.stackable.cards .card {
+            margin: 2em 2em;
+        }
+        .column .ui.stackable.cards .card {
+            width: calc(100% - 4em) !important;
+        }
+    }
+    /* SP横 */
+    @media screen and (min-width: 480px) and (max-width: 599px) {
+        .ui.header {
+            font-size: 24px;
+        }
+        .ui.stackable.cards .card {
+            margin: 2em 4em;
+        }
+        .column .ui.stackable.cards .card {
+            width: calc(100% - 8em) !important;
+        }
+    }
+    /* tablet */
+    @media screen and (min-width: 600px) and (max-width: 959px) {
     }
 </style>

@@ -78,5 +78,25 @@
             margin-top: 20px;
             color: #a7d9e7;
         }
+        /* SP縦 */
+        @media screen and (max-width: 479px) {
+            height: 260px;
+            .site-info {
+                width: 100%;
+                border-top: 1px solid rgba(255, 255, 255, 0.3);
+                padding-top: 10px;
+                a {
+                    margin: 5px;
+                    color: #c8e7f0;
+                    font-size: 14px;
+                }
+            }
+        }
+        /* tablet */
+        @media screen and (min-width:600px) and (max-width:959px) {
+            .site-info {
+                width: 60%;
+            }
+        }
     }
 </style>

@@ -1,27 +1,27 @@
 <template>
     <div class="ui segment">
-        <div class="ui text menu">
-            <div class="item title">
-                <router-link to="/">
-                    <font-awesome-icon icon="graduation-cap" size="3x"/>
-                </router-link>
-            </div>
-            <div class="item title text">
-                <router-link to="/">
-                    <h2>Advice2</h2>
-                </router-link>
-            </div>
-            <div class="ui right item" v-show="isIndex">
-                <span>
-                    自治体：
-                    <div class="ui inline dropdown">
-                        <div class="text">大阪府 大阪市</div>
-                        <i class="dropdown icon"></i>
-                        <div class="menu">
-                            <div class="item">大阪府 大阪市</div>
+        <div class="ui container">
+            <div class="ui text menu">
+                <div class="item title">
+                    <router-link to="/">
+                        <font-awesome-icon icon="graduation-cap" size="3x"/>
+                    </router-link>
+                </div>
+                <div class="item title text">
+                    <router-link to="/">Advice2</router-link>
+                </div>
+                <div class="ui right item" v-show="isIndex">
+                    <span>
+                        自治体：
+                        <div class="ui inline dropdown">
+                            <div class="text">大阪府 大阪市</div>
+                            <i class="dropdown icon"></i>
+                            <div class="menu">
+                                <div class="item">大阪府 大阪市</div>
+                            </div>
                         </div>
-                    </div>
-                </span>
+                    </span>
+                </div>
             </div>
         </div>
     </div>
@@ -56,10 +56,12 @@
 
     /* header */
     .segment {
-        padding: 0px 150px 0px 150px;
+        padding: 0;
+
     }
-    .ui.text.menu {
-        padding-top: 0px;
+    .item.title.text {
+        font-size: 26px;
+        font-weight: bold;
     }
 
     /* title */
@@ -67,6 +69,25 @@
         color: #FF773E;
     }
     .title.text a {
-        margin-left: -5px;
+        margin-left: -10px;
+    }
+
+    /* SP縦横 */
+    @media screen and (max-width: 599px) {
+        /* header */
+        .ui.text.menu {
+            margin: 0;
+        }
+        .item.title {
+            font-size: 8px;
+        }
+        .item.title.text {
+            font-size: 16px;
+        }
+
+        /* municipality */
+        .ui.right.item {
+            font-size: 12px;
+        }
     }
 </style>

@@ -47,6 +47,21 @@
             background-image: url("/assets/email-pattern.png");
             border-radius: 4px;
             overflow: hidden;
+            /* SP縦横 */
+            @media screen and (max-width: 599px) {
+                height: 80%;
+                width: 90%;
+            }
+            /* tablet */
+            @media screen and (min-width: 600px) and (max-width: 959px) {
+                height: 60%;
+                width: 70%;
+            }
+            /* 小型PC */
+            @media screen and (min-width:960px) and (max-width:1279px) {
+                height: 40%;
+                width: 60%;
+            }
             height: 60%;
             width: 40%;
         }
@@ -60,8 +75,16 @@
         }
         &-content {
             overflow-y: auto;
+            /* SP縦 */
+            @media screen and (max-width: 479px) {
+                height: 300px;
+            }
+            /* tablet */
+            @media screen and (min-width: 600px) and (max-width: 959px) {
+                height: 345px;
+            }
             height: 295px;
-            padding: 10px 20px;
+            padding: 10px 20px 10px 20px;
         }
         &-footer {
             position: absolute;
