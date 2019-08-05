@@ -31,12 +31,19 @@
         display: none;
     }
 
+    /* SP縦横*/
+    @media screen and (max-width: 599px) {
+        .container .ui.container {
+            margin: -1em 0 0 0 !important;
+        }
+    }
+
     /* container */
     .ui.container {
         display: flex;
         flex-direction: column;
         min-height: 60vh;
-        margin-top: 60px;
+        margin-top: 50px;
         .ui.header.title {
             padding-top: 20px;
         }
