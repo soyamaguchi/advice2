@@ -66,25 +66,24 @@
             width: 40%;
         }
         &-header {
+            height: 5%;
             text-align: right;
             padding: 5px 10px;
             font-size: 25px;
         }
         &-title {
             padding: 10px 20px;
+            height: 15%;
         }
         &-content {
             overflow-y: auto;
-            /* SP縦 */
-            @media screen and (max-width: 479px) {
-                height: 300px;
-            }
-            /* tablet */
-            @media screen and (min-width: 600px) and (max-width: 959px) {
-                height: 345px;
-            }
-            height: 295px;
-            padding: 10px 20px 10px 20px;
+            -ms-overflow-style: none;
+            padding: 10px 20px;
+            margin-top: 15px;
+            height: 57%;
+        }
+        &-content::-webkit-scrollbar {
+            display: none;
         }
         &-footer {
             position: absolute;
@@ -92,6 +91,10 @@
             background: rgba(204, 204, 204, 0.2);
             width: 100%;
             height: 20%;
+            /* SP(狭い画面用) */
+            @media screen and (max-width: 359px) {
+                padding: 10px;
+            }
             padding: 20px;
             text-align: left;
         }

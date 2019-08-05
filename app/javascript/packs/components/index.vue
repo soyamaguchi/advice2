@@ -49,12 +49,9 @@
                         <a @click="closeModalContent" href="javascript:void(0)" class="close-modal">×</a>
                     </template>
                     <template slot="title">
-                        <div class="modal-title">
-                            <p class="modal main-title">{{ targetModalContent.main_title }}</p>
-<!--                            {{ targetModalContent.main_title }}-->
-                        </div>
+                        <p class="modal main-title">{{ targetModalContent.main_title }}</p>
                         <div :class="['ui', targetModalContent.color, 'ribbon label']">
-                            <i :class="[icons[targetModalContent.city_id][targetModalContent.category_id], 'icon']"></i> {{ targetModalContent.category_name }}
+                            <i :class="[icons[targetModalContent.city_id][targetModalContent.category_id], 'icon']"></i>{{ targetModalContent.category_name }}
                         </div>
                     </template>
                     <p class="modal sub-title" v-if="targetModalContent.sub_title">{{ targetModalContent.sub_title }}</p>
@@ -229,13 +226,11 @@
         color: rgba(0, 0, 0, 0.2);
     }
     /* modal maintitle */
-    .modal-title {
-        p {
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            font-size: 22px;
-        }
+    .modal.main-title {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 22px;
     }
     /* modal subtitle */
     .modal.sub-title {
