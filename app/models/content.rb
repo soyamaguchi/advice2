@@ -4,6 +4,5 @@ class Content < ApplicationRecord
   validates :city_id, presence: true
   validates :url, presence: true
   validates :category, presence: true
-  validates :update_time, presence: true
   validates :main_title, presence: true
 end
