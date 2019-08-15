@@ -83,7 +83,10 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   database: advice2_production
-  username: advice2
-  password: <%= ENV['ADVICE2_DATABASE_PASSWORD'] %>
+  username: root
+  password:
+
