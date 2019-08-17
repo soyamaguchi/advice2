@@ -17,7 +17,7 @@ namespace :unicorn do
     execute :kill, "-s QUIT $(< #{fetch(:unicorn_pid)})"
   end
 
-#unicornを再起動するメソッド
+#unicornを再起動するメソッド(ホットデプロイ)
   def reload_unicorn
     execute :kill, "-s USR2 $(< #{fetch(:unicorn_pid)})"
   end
