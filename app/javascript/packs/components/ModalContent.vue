@@ -44,7 +44,7 @@
         /* Background pattern from Toptal Subtle Patterns */
         &-window {
             position: fixed;
-            background-image: url("/assets/email-pattern.png");
+            background-image: url("/imgs/email-pattern.png");
             border-radius: 4px;
             overflow: hidden;
             /* SP縦横 */
