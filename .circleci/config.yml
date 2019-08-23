@@ -1,10 +1,6 @@
 version: 2.1
 jobs:
   build:
-    # 対象ブランチ：master
-    branches:
-      only:
-        - master
     # docker images
     docker:
       - image: circleci/ruby:2.6.3-node-browsers
