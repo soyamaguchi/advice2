@@ -8,17 +8,12 @@ jobs:
     # docker images
     docker:
       - image: circleci/ruby:2.6.3-node-browsers
-        environment:
-          RAILS_ENV: test
-
       - image: circleci/postgres:latest
+    # workspace
     working_directory: ~/repo
 
     steps:
       - checkout
-
-      - add_ssh_keys:
-          fingerprints: ""
 
       - restore_cache:
           keys:
@@ -68,17 +63,3 @@ jobs:
       - store_artifacts:
           path: /tmp/test-results
           destination: test-results
-
-      # ssh-agent
-#      - run:
-#          name: add ssh-agent
-#          command: |
-#            ssh-agent -s > ~/.ssh_agent_conf
-#            source ~/.ssh_agent_conf
-#            for _k in $(ls ${HOME}/.ssh/id_*); do
-#              ssh-add ${_k} || true
-#            done
-#
-#          # deploy
-#          name: deploy
-#          command: bundle exec cap production deploy
