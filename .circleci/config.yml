@@ -1,0 +1,84 @@
+version: 2.1
+jobs:
+  build:
+    # 対象ブランチ：master
+    branches:
+      only:
+        - master
+    # docker images
+    docker:
+      - image: circleci/ruby:2.6.3-node-browsers
+        environment:
+          RAILS_ENV: test
+
+      - image: circleci/postgres:latest
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      - add_ssh_keys:
+          fingerprints: ""
+
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "Gemfile.lock" }}
+            - vi-dependencies-
+
+      - run:
+          name: bundle install
+          command: bundle install --jobs=4 --retry=3 --path vendor/bundle
+
+      - save_cache:
+          paths:
+            - ./vendor/bundle
+          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+
+      - restore_cache:
+          keys:
+            - y1-dependencies-{{ checksum "yarn.lock" }}
+            - y1-dependencies-
+
+      - run:
+          name: yarn install
+          command: yarn install --cache-folder ~/.cache/yarn
+
+      - save_cache:
+          key: y1-dependencies-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
+
+      # DB設定
+      - run: rm ./config/database.yml
+      - run: mv ./config/database.yml.ci ./config/database.yml
+      - run: bundle exec rake db:create
+      - run: bundle exec rake db:migrate
+
+      # TEST
+      - run:
+          name: run tests
+          command: |
+            mkdir /tmp/test-results
+            TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)"
+
+            bundle exec rspec --format progress --out /tmp/test-results/rspec.xml $TEST_FILES
+
+      - store_test_results:
+          path: /tmp/test-results
+      - store_artifacts:
+          path: /tmp/test-results
+          destination: test-results
+
+      # ssh-agent
+#      - run:
+#          name: add ssh-agent
+#          command: |
+#            ssh-agent -s > ~/.ssh_agent_conf
+#            source ~/.ssh_agent_conf
+#            for _k in $(ls ${HOME}/.ssh/id_*); do
+#              ssh-add ${_k} || true
+#            done
+#
+#          # deploy
+#          name: deploy
+#          command: bundle exec cap production deploy

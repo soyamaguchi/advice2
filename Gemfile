@@ -48,6 +48,8 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano-rbenv'
+  # dotenv
+  gem 'dotenv-rails'
 end
 
 group :development do

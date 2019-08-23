@@ -61,5 +61,5 @@
 #   }
 
 # AWS EC2 本番環境
-server '52.192.221.41', user: 'soya', roles: %w{app db web}
-set :ssh_options, keys: '~/.ssh/Advice2_ecdsa'
+server ENV['AWS_EC2_IP'], user: ENV['AWS_EC2_USER'], roles: %w{app db web}
+set :ssh_options, keys: ENV['AWS_EC2_KEY_PATH']
