@@ -2,7 +2,9 @@ require 'rails_helper'
 
 describe MunicipalityInfo, type: :model do
   describe 'municipality_info model ut' do
-    let!(:city) { City.create(prefecture: "TEST", city: "test", ward: "", url: "https://github.com") }
+    if ENV['RAILS_ENV'] == 'test'
+      let!(:city) { City.create(id: 1, prefecture: "TEST", city: "test", ward: "", url: "https://github.com") }
+    end
     let(:municipality_info) { MunicipalityInfo.new(params) }
     let(:params) { { city_id: 1,
                      url: "https://github.com/soyamaguchi",
