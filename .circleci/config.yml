@@ -40,8 +40,6 @@ jobs:
             - ~/.cache/yarn
 
       # DB設定
-      - run: rm ./config/database.yml
-      - run: mv ./config/database.yml.ci ./config/database.yml
       - run: bundle exec rake db:create
       - run: bundle exec rake db:migrate
 
