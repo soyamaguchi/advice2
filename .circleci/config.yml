@@ -4,7 +4,13 @@ jobs:
     # docker images
     docker:
       - image: circleci/ruby:2.6.3-node-browsers
+        environment:
+          RAILS_ENV: test
       - image: circleci/postgres:latest
+        environment:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: advice2_test
     # workspace
     working_directory: ~/repo
 
