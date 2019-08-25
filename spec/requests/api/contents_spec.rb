@@ -28,8 +28,10 @@ describe 'Get Api' do
       get "/api/contents?q[city]=#{city_id}&q[category]="
       json = JSON.parse(response.body)
 
-      puts json
-      puts json['contents']
+      puts contents
+      puts categories
+      puts municipality_infos
+
 
       expect(response.status).to eq(200)
       expect(json['contents'].first['city_id']).to eq(city_id)
