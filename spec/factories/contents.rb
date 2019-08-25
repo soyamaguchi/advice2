@@ -1,9 +1,9 @@
 FactoryBot.define do
   factory :content do
-    id { 361 }
-    city_id { 10 }
+    sequence(:id) { |i| i }
+    city_id { 1 }
     url { "https://www.city.osaka.lg.jp" }
-    category { 30 }
-    main_title { "test-title_01" }
+    sequence(:category_id) { |i| i }
+    main_title { "test-title_#{category_id}" }
   end
 end

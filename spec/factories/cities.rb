@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :city do
-    id { 10 }
+    id { 1 }
     prefecture { "大阪府" }
     city { "大阪市" }
     ward {  }

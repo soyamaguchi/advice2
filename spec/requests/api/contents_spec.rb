@@ -1,6 +1,13 @@
 require 'rails_helper'
 
 describe 'Get Api' do
+  # categoryの生成
+  create_list(:category, 4)
+  # contentの生成
+  create_list(:content, 4)
+  # municipality_infoの生成
+  create_list(:municipality_info, 4)
+
   # 大阪府 id
   let(:city_id) { 1 }
   # 大阪府 教育 category_id
@@ -22,7 +29,11 @@ describe 'Get Api' do
       expect(response.status).to eq(200)
       expect(json['contents'].first['city_id']).to eq(city_id)
       expect(json['contents'].first['category_name']).to eq('行政オンラインサービス')
-      expect(json['contents'].last['category_name']).to eq('市民活動・コミュニティ')
+      if ENV['RAILS_ENV'] == 'test'
+        expect(json['contents'].last['category_name']).to eq('教育')
+      elsif ENV['RAILS_ENV'] == 'development'
+        expect(json['contents'].last['category_name']).to eq('市民活動・コミュニティ')
+      end
     end
     it 'category contents' do
       get "/api/contents?q[city]=#{city_id}&q[category]=#{category_id}"
