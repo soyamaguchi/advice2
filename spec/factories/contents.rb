@@ -4,6 +4,6 @@ FactoryBot.define do
     city_id { 1 }
     url { "https://www.city.osaka.lg.jp" }
     sequence(:category) { |i| i }
-    main_title { "test-title_#{category_id}" }
+    main_title { "test-title_#{category}" }
   end
 end
