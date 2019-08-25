@@ -11,7 +11,6 @@ set :keep_releases, 5
 set :rbenv_ruby, '2.6.3'
 set :log_level, :debug
 set :whenever_command, 'bundle exec whenever'
-require 'whenever/capistrano'
 
 namespace :deploy do
   desc 'Restart application'
