@@ -2,11 +2,11 @@ require 'rails_helper'
 
 describe 'Get Api' do
   # categoryの生成
-  create_list(:category, 4)
+  let!(:categories) { create_list(:category, 4) }
   # contentの生成
-  create_list(:content, 4)
+  let!(:contents) { create_list(:content, 4) }
   # municipality_infoの生成
-  create_list(:municipality_info, 4)
+  let!(:municipality_infos) { create_list(:municipality_info, 4) }
 
   # 大阪府 id
   let(:city_id) { 1 }
