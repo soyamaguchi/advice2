@@ -28,20 +28,6 @@ describe 'Get Api' do
       get "/api/contents?q[city]=#{city_id}&q[category]="
       json = JSON.parse(response.body)
 
-
-      contents.each do |c|
-        puts c.category
-      end
-
-      categories.each do |c|
-        puts c.category_id
-      end
-
-      municipality_infos.each do |m|
-        puts m.category
-      end
-
-
       expect(response.status).to eq(200)
       expect(json['contents'].first['city_id']).to eq(city_id)
       expect(json['contents'].first['category_name']).to eq('行政オンラインサービス')
