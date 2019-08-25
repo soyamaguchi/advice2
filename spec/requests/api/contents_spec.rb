@@ -31,7 +31,7 @@ describe 'Get Api' do
 
       contents.each do |c|
         puts c.id
-        pus c.category
+        puts c.category
       end
 
       categories.each do |c|
