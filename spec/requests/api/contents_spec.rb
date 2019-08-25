@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 describe 'Get Api' do
+  # cityの生成
+  let!(:city) { create(:city) }
   # categoryの生成
   let!(:categories) { create_list(:category, 4) }
   # contentの生成
