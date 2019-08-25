@@ -59,7 +59,7 @@ describe 'Get Api' do
       expect(json['contents'].length).to eq(0)
     end
     it 'no params' do
-      get '/api/contents'
+      get '/api/contents?q'
 
       expect(response.status).to eq(400)
     end
