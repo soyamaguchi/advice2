@@ -30,7 +30,6 @@ describe 'Get Api' do
 
 
       contents.each do |c|
-        puts c.id
         puts c.category
       end
 
