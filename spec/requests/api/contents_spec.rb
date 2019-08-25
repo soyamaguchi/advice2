@@ -1,19 +1,21 @@
 require 'rails_helper'
 
 describe 'Get Api' do
-  # cityの生成
-  let!(:cities) { create(:city) }
-  # categoryの生成
-  let!(:categories) { create_list(:category, 4) }
-  # contentの生成
-  let!(:contents) { create_list(:content, 4) }
-  # municipality_infoの生成
-  let!(:municipality_infos) { create_list(:municipality_info, 4) }
+  before(:all) do
+    # cityの生成
+    create(:city)
+    # categoryの生成
+    create_list(:category, 4)
+    # contentの生成
+    create_list(:content, 4)
+    # municipality_infoの生成
+    create_list(:municipality_info, 4)
+  end
 
   # 大阪府 id
   let(:city_id) { 1 }
   # 大阪府 子育て category_id
-  let(:category_id) { 106 }
+  let(:category_id) { 3 }
 
   # 正常系
   context 'get_contents' do
