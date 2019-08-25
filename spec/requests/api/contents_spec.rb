@@ -19,13 +19,6 @@ describe 'Get Api' do
 
   # 正常系
   context 'get_contents' do
-    it 'no contents' do
-      get '/api/contents?q[city]=&q[category]='
-      json = JSON.parse(response.body)
-
-      expect(response.status).to eq(200)
-      expect(json['contents'].length).to eq(0)
-    end
     it 'all contents' do
       get "/api/contents?q[city]=#{city_id}&q[category]="
       json = JSON.parse(response.body)
@@ -51,6 +44,13 @@ describe 'Get Api' do
   end
   # 異常系
   context 'cannot_get_contents' do
+    it 'no params' do
+      get '/api/contents?q[city]=&q[category]='
+      json = JSON.parse(response.body)
+
+      expect(response.status).to eq(200)
+      expect(json['contents'].length).to eq(0)
+    end
     it 'params illegal' do
       get "/api/contents?q[cities]=#{city_id}&q[category]="
       json = JSON.parse(response.body)
@@ -58,10 +58,12 @@ describe 'Get Api' do
       expect(response.status).to eq(200)
       expect(json['contents'].length).to eq(0)
     end
-    it 'no params' do
-      get '/api/contents?q'
+    it 'excluded' do
+      get '/api/contents?q[city]=100&q[category]=100'
+      json = JSON.parse(response.body)
 
-      expect(response.status).to eq(400)
+      expect(response.status).to eq(200)
+      expect(json['contents'].length).to eq(0)
     end
   end
 end

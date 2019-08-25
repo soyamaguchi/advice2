@@ -53,7 +53,7 @@ module Crawler::Municipality
 
       # サブセクションからセクション詳細➡︎項目取得 && サブセクション➡︎項目取得
       section_detail_urls.each do |sub_section_url|
-        # 「市政」カテゴリはスクレイピング非対称
+        # 「市政」カテゴリはスクレイピング非対象
         if asymmetrical.include?(sub_section_url.search("//div[@id='sub_h1_box']/h1").text) || sub_section_url.nil?
           next
         end
