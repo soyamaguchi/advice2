@@ -1,8 +1,8 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.11.0"
 
-set :application, "advice2"
-set :repo_url, "git@github.com:soyamaguchi/advice2.git"
+set :application, 'advice2'
+set :repo_url, 'git@github.com:soyamaguchi/advice2.git'
 set :branch, 'master'
 set :deploy_to, '/var/www/rails/advice2'
 set :linked_files, fetch(:linked_files, []).push('config/master.key')
@@ -10,6 +10,8 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 set :keep_releases, 5
 set :rbenv_ruby, '2.6.3'
 set :log_level, :debug
+set :whenever_command, 'bundle exec whenever'
+require 'whenever/capistrano'
 
 namespace :deploy do
   desc 'Restart application'

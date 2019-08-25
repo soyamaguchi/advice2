@@ -92,4 +92,3 @@ production:
   database: advice2_production
   username: root
   password:
-
