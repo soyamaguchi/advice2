@@ -28,9 +28,19 @@ describe 'Get Api' do
       get "/api/contents?q[city]=#{city_id}&q[category]="
       json = JSON.parse(response.body)
 
-      puts contents
-      puts categories
-      puts municipality_infos
+
+      contents.each do |c|
+        puts c.id
+        pus c.category
+      end
+
+      categories.each do |c|
+        puts c.category_id
+      end
+
+      municipality_infos.each do |m|
+        puts m.category
+      end
 
 
       expect(response.status).to eq(200)
