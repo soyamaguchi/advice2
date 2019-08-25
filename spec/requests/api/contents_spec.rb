@@ -12,8 +12,8 @@ describe 'Get Api' do
 
   # 大阪府 id
   let(:city_id) { 1 }
-  # 大阪府 教育 category_id
-  let(:category_id) { 3 }
+  # 大阪府 子育て category_id
+  let(:category_id) { 106 }
 
   # 正常系
   context 'get_contents' do
@@ -44,7 +44,7 @@ describe 'Get Api' do
       expect(response.status).to eq(200)
       expect(json['contents'].first['city_id']).to eq(city_id)
       expect(json['contents'].first['category_id']).to eq(category_id)
-      expect(json['contents'].first['category_name']).to eq('教育')
+      expect(json['contents'].first['category_name']).to eq('子育て')
     end
   end
   # 異常系
