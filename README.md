@@ -1,25 +1,8 @@
 # Advice2
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+知っておいて損はないお得な自治体情報サイト。
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
+# :blue_book:
 
 # Tech Stack
   ## Development
