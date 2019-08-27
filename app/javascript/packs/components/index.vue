@@ -95,7 +95,7 @@
                 icons: {
                     1: ["desktop", "female", "sign language", "edit", "bell outline", "home", "building", "wheelchair", "bed", "certificate", "chart area", "shield alternate", "clone outline", "yen sign", "medkit", "money bill alternate outline", "tint", "road", "car", "globe", "trash", "utensil spoon", "paw", "shopping cart", "stethoscope", "play", "handshake outline"],
                 },
-                /** indexcomponen init exist*/
+                /** indexcomponent init exist*/
                 indexInitFlag: this.$store.state.indexInitFlag,
                 /** modal active content */
                 targetModalContent: null,
