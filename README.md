@@ -1,13 +1,17 @@
 # Advice2
-知っておいて損はないお得な自治体情報サイト。
+知っておいて損はないお得な自治体情報サイト
 
 ## :blue_book: Description
- - 地方自治体のお得な行政サービスのみを掲載。
- - 様々な行政サービスが存在する中、あまり周知されていないがために、知らないことで損をしないよう情報を得ることをコンセプトとしている。
+ - 地方自治体のお得な行政サービスのみを掲載
+ - 様々な行政サービスが存在する中、あまり周知されていないがために、知らないことで損をしないよう情報を得ることをコンセプトとしている
 
 ***DEMO:***
 
 ![Demo](https://raw.githubusercontent.com/wiki/soyamaguchi/advice2/imgs/advice2.gif)
+
+## :dizzy: Features
+ - 作成したCrawlerで自治体サイトをスクレイピング
+ - スクレイピング時に前回スクレイピング時のデータと比較して更新があった場合や新規データの場合は管理者に知らせて管理者がお得だと判断したもののみ登録され、掲載される(対応予定)
 
 ## :hammer: Tech Stack
   ### Development
@@ -34,3 +38,20 @@
   - Vue.js 2.6.10
   - Vuex 3.1.1
   - Semantic UI
+
+## :pushpin: Installation
+
+```console
+$ mkdir workspace
+$ cd workspace
+$ git clone git@github.com:soyamaguchi/advice2.git
+$ docker-compose up --build
+```
+
+## :exclamation: cautions
+ - データは存在しないためコンテンツは表示されません
+
+## :squirrel: Author
+
+[#](https://twitter.com/#)
+
