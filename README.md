@@ -48,7 +48,7 @@ $ git clone git@github.com:soyamaguchi/advice2.git
 $ docker-compose up --build
 ```
 
-## :exclamation: cautions
+## :exclamation: Cautions
  - データは存在しないためコンテンツは表示されません
 
 ## :squirrel: Author
