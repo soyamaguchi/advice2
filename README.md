@@ -5,7 +5,10 @@
  - 地方自治体のお得な行政サービスのみを掲載。
  - 様々な行政サービスが存在する中、あまり周知されていないがために、知らないことで損をしないよう情報を得ることをコンセプトとしている。
 
-## Tech Stack
+***DEMO:***
+![Demo](https://raw.githubusercontent.com/wiki/soyamaguchi/advice2/imgs/advice2.gif)
+
+## :hammer: Tech Stack
   ### Development
   - Docker 19.03.1
   - Docker Compose 1.24.1
