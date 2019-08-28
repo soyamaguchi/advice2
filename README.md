@@ -55,3 +55,6 @@ $ docker-compose up --build
 
 [#](https://twitter.com/#)
 
+## :bookmark: License
+
+[MIT](#)
