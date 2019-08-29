@@ -58,7 +58,7 @@
                     <p class="modal content">{{ targetModalContent.content }}</p>
                     <template slot="footer">
                         <p>下記の出典元情報を加工して掲載しております</p>
-                        <a :href="targetModalContent.url" target="_blank">
+                        <a :href="targetModalContent.url" target="_blank" rel=”noopener”>
                             <i class="book icon"></i> 出典：{{ targetModalContent.prefecture }} {{ targetModalContent.city }}{{ targetModalContent.ward }}のサイト
                         </a>
                     </template>

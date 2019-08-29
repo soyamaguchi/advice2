@@ -4,9 +4,9 @@
             <h2 class="ui header title">ライセンス情報</h2>
             <p>Advice2で利用している素材や参考にしているデザイン等のライセンスを表記しています</p>
             <h3 class="ui header">Subtle Patterns</h3>
-            <p>Background pattern from <a href="https://www.toptal.com/designers/subtlepatterns/" target="_blank">Toptal Subtle Patterns</a></p>
+            <p>Background pattern from <a href="https://www.toptal.com/designers/subtlepatterns/" target="_blank" rel=”noopener”>Toptal Subtle Patterns</a></p>
             <h3 class="ui header">Templated</h3>
-            <p class="last-row">design from <a href="https://templated.co" target="_blank">Templated</a></p>
+            <p class="last-row">design from <a href="https://templated.co" target="_blank" rel=”noopener”>Templated</a></p>
         </div>
     </div>
 </template>

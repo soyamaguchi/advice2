@@ -41,16 +41,16 @@
             <p>
                 本ウェブサイトでは，Googleによるアクセス解析ツール「Googleアナリティクス」を利用しています。
                 このGoogleアナリティクスはアクセス情報の収集のためにCookieを使用しており，Cookieを無効にすることで収集を拒否することが出来ますので、お使いのブラウザの設定をご確認ください。
-                Googleアナリティクスの利用規約に関して確認したい場合は，<a href="https://marketingplatform.google.com/about/analytics/terms/jp/" target="_blank">Google アナリティクス利用規約</a>をご覧ください。
-                また，「ユーザーが Google パートナーのサイトやアプリを使用する際の Google によるデータ使用」に関して確認したい場合は，<a href="https://policies.google.com/technologies/ads?hl=ja" target="_blank">Google ポリシーと規約</a>をご覧ください。
+                Googleアナリティクスの利用規約に関して確認したい場合は，<a href="https://marketingplatform.google.com/about/analytics/terms/jp/" target="_blank" rel=”noopener”>Google アナリティクス利用規約</a>をご覧ください。
+                また，「ユーザーが Google パートナーのサイトやアプリを使用する際の Google によるデータ使用」に関して確認したい場合は，<a href="https://policies.google.com/technologies/ads?hl=ja" target="_blank" rel=”noopener”>Google ポリシーと規約</a>をご覧ください。
             </p>
             <h3 class="ui header">５. 広告配信</h3>
             <p>
                 1. 本ウェブサイトでは，第三者配信の広告サービス「Google Adsense」を利用しています。
                 Googleなどの第三者広告配信事業者は，ユーザーの興味に応じた広告を表示するために，Cookie（本ウェブサイトのユーザーが本ウェブサイトや他のウェブサイトにアクセスした際の情報など）を使用することがあります。
-                ユーザーは，広告設定でユーザーに合わせた広告（以下，「パーソナライズド広告」とします。）を<a href="https://adssettings.google.com/u/0/authenticated?hl=ja" target="_blank">Google 広告設定</a>から無効にすることが出来ます。
+                ユーザーは，広告設定でユーザーに合わせた広告（以下，「パーソナライズド広告」とします。）を<a href="https://adssettings.google.com/u/0/authenticated?hl=ja" target="_blank" rel=”noopener”>Google 広告設定</a>から無効にすることが出来ます。
                 第三者配信による広告掲載を無効にしていない場合は，第三者配信事業者や広告ネットワークの配信する広告がウェブサイトに掲載されることがあります。
-                Googleによって広告の第三者配信が認められている広告配信事業者の詳細は，<a href="https://support.google.com/admanager/answer/94149" target="_blank">広告の第三者配信が認められている広告配信事業者</a>をご確認ください。
+                Googleによって広告の第三者配信が認められている広告配信事業者の詳細は，<a href="https://support.google.com/admanager/answer/94149" target="_blank" rel=”noopener”>広告の第三者配信が認められている広告配信事業者</a>をご確認ください。
             </p>
             <p>
                 2. Advice2は，Amazon.co.jpを宣伝しリンクすることによってサイトが紹介料を獲得できる手段を提供することを目的に設定されたアフィリエイトプログラムである，Amazonアソシエイト・プログラムの参加者です。

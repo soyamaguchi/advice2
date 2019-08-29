@@ -53,7 +53,7 @@ $ docker-compose up --build
 
 ## :squirrel: Author
 
-[#](https://twitter.com/#)
+[@_soyamaguchi_](https://twitter.com/_soyamaguchi_)
 
 ## :bookmark: License
 
