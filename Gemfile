@@ -92,4 +92,4 @@ gem 'semantic-ui-sass'
 gem 'jquery-rails'
 
 # GoogleAnalytics
-gem 'google-analytics-rails'
+# gem 'google-analytics-rails'
