@@ -10,6 +10,14 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
     <meta name="viewport" content="width=device-width">
+
+    <%= favicon_link_tag 'favicon.ico', rel: 'shortcut icon', type: 'image/vnd.microsoft.icon' %>
+    <%= favicon_link_tag 'apple-touch-icon-57x57.png', rel: 'apple-touch-icon', type: 'image/vnd.microsoft.icon' %>
+    <%= favicon_link_tag 'apple-touch-icon-60x60.png', rel: 'apple-touch-icon', type: 'image/vnd.microsoft.icon', sizes: '57x57' %>
+    <%= favicon_link_tag 'apple-touch-icon-72x72.png', rel: 'apple-touch-icon', type: 'image/vnd.microsoft.icon', sizes: '60x60' %>
+    <%= favicon_link_tag 'apple-touch-icon-76x76.png', rel: 'apple-touch-icon', type: 'image/vnd.microsoft.icon', sizes: '72x72' %>
+
+
   </head>
 
   <body>
