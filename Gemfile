@@ -90,3 +90,6 @@ gem 'webpacker', github: 'rails/webpacker'
 # semantic ui
 gem 'semantic-ui-sass'
 gem 'jquery-rails'
+
+# GoogleAnalytics
+gem 'google-analytics-rails'
