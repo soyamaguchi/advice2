@@ -24,6 +24,6 @@ ENV['RAILS_ENV'] ||= 'production'
 set :environment, ENV['RAILS_ENV']
 ENV.each { |k, v| env(k, v) }
 
-every 1.day, at: '0:00 am' do
-  rake "crawler:init"
-end
+# every 1.day, at: '0:00 am' do
+#   rake "crawler:init"
+# end
